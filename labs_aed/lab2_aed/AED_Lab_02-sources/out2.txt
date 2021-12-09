@@ -1,0 +1,30 @@
+File: ../AED_Lab_02-tests/z10.txt
+QU: The number of links performed is 8 for 10 input pairs. 25 find_access / 8 union_access
+File: ../AED_Lab_02-tests/z100.txt
+QU: The number of links performed is 86 for 100 input pairs. 516 find_access / 86 union_access
+File: ../AED_Lab_02-tests/z1000.txt
+QU: The number of links performed is 835 for 1000 input pairs. 28930 find_access / 835 union_access
+File: ../AED_Lab_02-tests/z10000.txt
+QU: The number of links performed is 8361 for 10000 input pairs. 2357137 find_access / 8361 union_access
+File: ../AED_Lab_02-tests/z100000.txt
+QU: The number of links performed is 83744 for 100000 input pairs. 227757401 find_access / 83744 union_access
+File: ../AED_Lab_02-tests/z20.txt
+QU: The number of links performed is 16 for 20 input pairs. 69 find_access / 16 union_access
+File: ../AED_Lab_02-tests/z200.txt
+QU: The number of links performed is 170 for 200 input pairs. 1723 find_access / 170 union_access
+File: ../AED_Lab_02-tests/z2000.txt
+QU: The number of links performed is 1684 for 2000 input pairs. 110199 find_access / 1684 union_access
+File: ../AED_Lab_02-tests/z20000.txt
+QU: The number of links performed is 16794 for 20000 input pairs. 8992494 find_access / 16794 union_access
+File: ../AED_Lab_02-tests/z200000.txt
+QU: The number of links performed is 167760 for 200000 input pairs. 884908733 find_access / 167760 union_access
+File: ../AED_Lab_02-tests/z50.txt
+QU: The number of links performed is 41 for 50 input pairs. 225 find_access / 41 union_access
+File: ../AED_Lab_02-tests/z500.txt
+QU: The number of links performed is 417 for 500 input pairs. 6846 find_access / 417 union_access
+File: ../AED_Lab_02-tests/z5000.txt
+QU: The number of links performed is 4203 for 5000 input pairs. 549839 find_access / 4203 union_access
+File: ../AED_Lab_02-tests/z50000.txt
+QU: The number of links performed is 41812 for 50000 input pairs. 53602912 find_access / 41812 union_access
+File: ../AED_Lab_02-tests/z500000.txt
+QU: The number of links performed is 419003 for 500000 input pairs. 5501445574 find_access / 419003 union_access

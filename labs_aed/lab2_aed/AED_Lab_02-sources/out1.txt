@@ -1,0 +1,30 @@
+File: ../AED_Lab_02-tests/z10.txt
+QF: The number of links performed is 8 for 10 input pairs. 20 find_access / 80 union_access
+File: ../AED_Lab_02-tests/z100.txt
+QF: The number of links performed is 86 for 100 input pairs. 200 find_access / 8600 union_access
+File: ../AED_Lab_02-tests/z1000.txt
+QF: The number of links performed is 835 for 1000 input pairs. 2000 find_access / 835000 union_access
+File: ../AED_Lab_02-tests/z10000.txt
+QF: The number of links performed is 8361 for 10000 input pairs. 20000 find_access / 83610000 union_access
+File: ../AED_Lab_02-tests/z100000.txt
+QF: The number of links performed is 83744 for 100000 input pairs. 200000 find_access / 8374400000 union_access
+File: ../AED_Lab_02-tests/z20.txt
+QF: The number of links performed is 16 for 20 input pairs. 40 find_access / 320 union_access
+File: ../AED_Lab_02-tests/z200.txt
+QF: The number of links performed is 170 for 200 input pairs. 400 find_access / 34000 union_access
+File: ../AED_Lab_02-tests/z2000.txt
+QF: The number of links performed is 1684 for 2000 input pairs. 4000 find_access / 3368000 union_access
+File: ../AED_Lab_02-tests/z20000.txt
+QF: The number of links performed is 16794 for 20000 input pairs. 40000 find_access / 335880000 union_access
+File: ../AED_Lab_02-tests/z200000.txt
+QF: The number of links performed is 167760 for 200000 input pairs. 400000 find_access / 33552000000 union_access
+File: ../AED_Lab_02-tests/z50.txt
+QF: The number of links performed is 41 for 50 input pairs. 100 find_access / 2050 union_access
+File: ../AED_Lab_02-tests/z500.txt
+QF: The number of links performed is 417 for 500 input pairs. 1000 find_access / 208500 union_access
+File: ../AED_Lab_02-tests/z5000.txt
+QF: The number of links performed is 4203 for 5000 input pairs. 10000 find_access / 21015000 union_access
+File: ../AED_Lab_02-tests/z50000.txt
+QF: The number of links performed is 41812 for 50000 input pairs. 100000 find_access / 2090600000 union_access
+File: ../AED_Lab_02-tests/z500000.txt
+QF: The number of links performed is 419003 for 500000 input pairs. 1000000 find_access / 209501500000 union_access

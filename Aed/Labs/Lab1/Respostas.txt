@@ -1,0 +1,340 @@
+1 Passos de compilação:
+        1.1. Ficheiro Criado.
+                Propriedades: lab1a.o: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), not stripped
+        
+        1.2. Ficheiro Criado.
+                Propriedades: lab1a: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=96817308d07cd3426a0e93a33351f1dd18221499, for GNU/Linux 4.4.0, not stripped
+
+                Principais diferenças, ficheiro criado com o primeiro comando não era um executavel, ficheiro criado com o segundo comando é um executavel que pode ser corrido e pode ser experimentado
+        
+        1.3. Um ficheiro executavel pode ser criado utilizando logo o srgundo comando, que irá criar um programa que pode ser corrido pelo utilizador, testando assim o seu código, 
+                ou então o utilizador pode criar um um ficheiro intermédio de extenção .o que não consegue ser corrido, mas consigo ser utilizado para ligar a outro ficheiro compilavel.
+
+        1.4. Ficheiro não criado:
+                Erros apresentados:
+                        lab1a.c: In function ‘main’:
+                        lab1a.c:25:4: error: ‘for’ loop initial declarations are only allowed in C99 or C11 mode
+                        25 |    for(unsigned int i = 0; i < histograma.numberLetters; i++)  {
+                        |    ^~~
+                        lab1a.c:25:4: note: use option ‘-std=c99’, ‘-std=gnu99’, ‘-std=c11’ or ‘-std=gnu11’ to compile your code
+                        lab1a.c:31:21: error: redefinition of ‘i’
+                        31 |    for(unsigned int i = 0; i < FREQ_SIZE; i++)  {
+                        |                     ^
+                        lab1a.c:25:21: note: previous definition of ‘i’ with type ‘unsigned int’
+                        25 |    for(unsigned int i = 0; i < histograma.numberLetters; i++)  {
+                        |                     ^
+                        lab1a.c:31:4: error: ‘for’ loop initial declarations are only allowed in C99 or C11 mode
+                        31 |    for(unsigned int i = 0; i < FREQ_SIZE; i++)  {
+                        |    ^~~
+
+                        Ocorrem devido a estar a utilizar propriedades que apenas foram introduzidas em versões de C mais recentes.
+
+        1.5. Ficheiro Criado 
+                Propriedades: lab1a: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=f3dcf2d09ac8a37dde1eb03375ad591cf263e6fc, for GNU/Linux 4.4.0, with debug_info, not stripped
+                Diferença do ficheiro anterior => este ficheiro tem informação debug => ao utilizar o gdb será possivel andar linha a linha com a instrução 'n' ou 'next'
+
+2 Depuração
+        2.1. Resultado obtido com o a seguinte execução "./lab1a bananinhas":
+                A : 3
+                B : 1176171841
+                C : 32571
+                D : 13
+                E : 0
+                F : 1
+                G : 0
+                H : 2
+                I : 1
+                J : 498709229
+                K : 21959
+                L : 0
+                M : 0
+                N : 498709155
+                O : 21959
+                P : 0
+                Q : 0
+                R : 498708624
+                S : 21960
+                T : -1976923568
+
+                Ao correr a segunda vez todos os valores que não foram utilizador ou seja, as letras presentes na palavra "bananinha" tinham um valor diferente algo que acontece visto o programa não ter inicializado valores antes de os utilizar
+
+        2.2. Problemas encontrados:
+                - O array não tinha o tamanho certo, vindo apenas com tamanho para 20 letras, aldo que seria incorreto, visto o abecedário que se encontra explicito no codigo ascii ter um total de 26 letras:
+                - O Array não via os seu valores iniciais limpos, ou seja, qualquer lixo que se encontra-se em memória era utilizado como sendo um dado correto 
+
+        2.3. Resultado obtido com o a seguinte execução "./lab1a zaragatoa", já alterado:
+                A : 4
+                B : 0
+                C : 0
+                D : 0
+                E : 0
+                F : 0
+                G : 1
+                H : 0
+                I : 0
+                J : 0
+                K : 0
+                L : 0
+                M : 0
+                N : 0
+                O : 1
+                P : 0
+                Q : 0
+                R : 1
+                S : 0
+                T : 1
+                U : 0
+                V : 0
+                W : 0
+                X : 0
+                Y : 0
+                Z : 1
+
+        2.4. Resultado obtido com a seguinte execução "valgrind --leak-check=full ./lab1a 'bananinhas das boas'":
+                ==10362== Memcheck, a memory error detector
+                ==10362== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+                ==10362== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+                ==10362== Command: ./lab1a bananinhas\ das\ boas
+                ==10362== 
+                A : 5
+                B : 2
+                C : 0
+                D : 1
+                E : 0
+                F : 0
+                G : 0
+                H : 1
+                I : 1
+                J : 0
+                K : 0
+                L : 0
+                M : 0
+                N : 3
+                O : 1
+                P : 0
+                Q : 0
+                R : 0
+                S : 3
+                T : 0
+                U : 0
+                V : 0
+                W : 0
+                X : 0
+                Y : 0
+                Z : 0
+                ==10362== 
+                ==10362== HEAP SUMMARY:
+                ==10362==     in use at exit: 0 bytes in 0 blocks
+                ==10362==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+                ==10362== 
+                ==10362== All heap blocks were freed -- no leaks are possible
+                ==10362== 
+                ==10362== For lists of detected and suppressed errors, rerun with: -s
+                ==10362== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+        2.5. Nenhum problema encontrado que seja necessário de alterar
+
+        2.6. Resultado obtido com a seguinte execução "valgrind --leak-check=full ./lab1b 'bananinhas das boas'": 
+                ==12466== Memcheck, a memory error detector
+                ==12466== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+                ==12466== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+                ==12466== Command: ./lab1b bananinhas\ das\ boas
+                ==12466== 
+                1
+                0
+                13
+                0
+                13
+                8
+                13
+                7
+                0
+                18
+                3
+                0
+                18
+                1
+                14
+                0
+                18
+                A : 5
+                B : 2
+                C : 0
+                D : 1
+                E : 0
+                F : 0
+                G : 0
+                H : 1
+                I : 1
+                J : 0
+                K : 0
+                L : 0
+                M : 0
+                N : 3
+                O : 1
+                P : 0
+                Q : 0
+                R : 0
+                S : 3
+                T : 0
+                ==12466== 
+                ==12466== HEAP SUMMARY:
+                ==12466==     in use at exit: 0 bytes in 0 blocks
+                ==12466==   total heap usage: 3 allocs, 3 frees, 1,120 bytes allocated
+                ==12466== 
+                ==12466== All heap blocks were freed -- no leaks are possible
+                ==12466== 
+                ==12466== For lists of detected and suppressed errors, rerun with: -s
+                ==12466== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+                O programa apenas apresenta um resultado certo devido não estar a ser testado corretamente com base naquilo que o mesmo deveria fazer. 
+                O mesmo erro que ocorria no programa lab1a.c ocorre aqui, visto apenas se reservar espaço para 20 letras (A -> T), ou seja, ao colocarmos um letra que não esteja neste intrevalo vamos ter o problema de a posição do array que vai ser acedida não existir;
+
+        2.7. Resultado obtido com a seguinte execução "valgrind --leak-check=full ./lab1b zaragatoa":
+                ==12786== Memcheck, a memory error detector
+                ==12786== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+                ==12786== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+                ==12786== Command: ./lab1b zaragatoa
+                ==12786== 
+                25
+                ==12786== Invalid read of size 4
+                ==12786==    at 0x1092F0: main (lab1b.c:50)
+                ==12786==  Address 0x4a430f4 is 20 bytes after a block of size 80 alloc'd
+                ==12786==    at 0x483E7C5: malloc (vg_replace_malloc.c:380)
+                ==12786==    by 0x1091D6: initHistogram (lab1b.c:24)
+                ==12786==    by 0x10928C: main (lab1b.c:43)
+                ==12786== 
+                ==12786== Invalid write of size 4
+                ==12786==    at 0x109307: main (lab1b.c:50)
+                ==12786==  Address 0x4a430f4 is 20 bytes after a block of size 80 alloc'd
+                ==12786==    at 0x483E7C5: malloc (vg_replace_malloc.c:380)
+                ==12786==    by 0x1091D6: initHistogram (lab1b.c:24)
+                ==12786==    by 0x10928C: main (lab1b.c:43)
+                ==12786== 
+                0
+                17
+                0
+                6
+                0
+                19
+                14
+                0
+                A : 4
+                B : 0
+                C : 0
+                D : 0
+                E : 0
+                F : 0
+                G : 1
+                H : 0
+                I : 0
+                J : 0
+                K : 0
+                L : 0
+                M : 0
+                N : 0
+                O : 1
+                P : 0
+                Q : 0
+                R : 1
+                S : 0
+                T : 1
+                ==12786== 
+                ==12786== HEAP SUMMARY:
+                ==12786==     in use at exit: 0 bytes in 0 blocks
+                ==12786==   total heap usage: 3 allocs, 3 frees, 1,120 bytes allocated
+                ==12786== 
+                ==12786== All heap blocks were freed -- no leaks are possible
+                ==12786== 
+                ==12786== For lists of detected and suppressed errors, rerun with: -s
+                ==12786== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+
+                Como respondido à pergunta anterior existiram erros ao testar o programa bem testado, visto que desta vez tinhamos letras que se encontravam no intrevalo de letras para a qual não tinha sido alocado dinamicamente espaço;
+
+        2.8. Ainda não fomos capazes de encontrar uma razão especifica para o sucessdido.
+
+        2.9 O erro que está a ocorrer existe pois se está a tentar libertar uma memoria que não foi dinamicamente alocada, visto que o ciclo for que faz os malloc começa com int i = 1; mas o ciclo que dá free começa com int i = 0; ou seja o elemento com index 0 não tem free
+
+        2.10. Valores observados:
+
+                (gdb) print i 
+                $1 = 0
+                (gdb) print table[i]
+                $2 = 0x55500000c639 <error: Cannot access memory at address 0x55500000c639>
+
+                O programa crashou pois o endereço de memoria que estava a tentar ser accedido pela intrução table[i] não é um endereço ao qual o utilizador tenha acesso.
+        
+        2.11. O segmentation fault apenas ocorre depois de realizarmos o next, pois o gdb tem um atraso de uma linha, querendo eu dizer com isto que a linha que se encontra no ecrâ nunca é a que está a ser realizada, ou seja, ao realizar um double free de uma variavel que nunca foi alocada irá ocorrer um erro com o compilador.
+
+        2.12. Colocar o primeiro for com a variavel de controlo (i) a ser = 0 quando o ciclo começa.
+
+        2.13. Resultado obtido coma seguinte incocação "./lab1d 6 8 11 23 4 5 9 13 1 4"
+                [ 6 8 11 23 4 5 9 13 1 4 ]
+                Não gosto nada de número ímpares... Deixa-me cá correr os números para ver se eles andam por aí...
+
+
+                [ 6 8 4 4 ]
+                Ah... Bem melhor!
+        
+        2.14. Resultados obtidos com a seguinte invocação "valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./lab1d 6 8 11 23 4 5 9 13 1 4"
+                ns=yes ./lab1d 6 8 11 23 4 5 9 13 1 4
+                ==17314== Memcheck, a memory error detector
+                ==17314== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+                ==17314== Using Valgrind-3.17.0 and LibVEX; rerun with -h for copyright info
+                ==17314== Command: ./lab1d 6 8 11 23 4 5 9 13 1 4
+                ==17314== 
+                [ 6 8 11 23 4 5 9 13 1 4 ]
+                Não gosto nada de número ímpares... Deixa-me cá correr os números para ver se eles andam por aí...
+
+
+                [ 6 8 4 4 ]
+                Ah... Bem melhor!
+                ==17314== 
+                ==17314== HEAP SUMMARY:
+                ==17314==     in use at exit: 96 bytes in 6 blocks
+                ==17314==   total heap usage: 11 allocs, 5 frees, 1,184 bytes allocated
+                ==17314== 
+                ==17314== 64 bytes in 4 blocks are indirectly lost in loss record 1 of 2
+                ==17314==    at 0x483E7C5: malloc (vg_replace_malloc.c:380)
+                ==17314==    by 0x1091D2: new_num (lab1d.c:51)
+                ==17314==    by 0x1092EF: create_list (lab1d.c:98)
+                ==17314==    by 0x1094D8: main (lab1d.c:207)
+                ==17314== 
+                ==17314== 96 (32 direct, 64 indirect) bytes in 2 blocks are definitely lost in loss record 2 of 2
+                ==17314==    at 0x483E7C5: malloc (vg_replace_malloc.c:380)
+                ==17314==    by 0x1091D2: new_num (lab1d.c:51)
+                ==17314==    by 0x1092EF: create_list (lab1d.c:98)
+                ==17314==    by 0x1094D8: main (lab1d.c:207)
+                ==17314== 
+                ==17314== LEAK SUMMARY:
+                ==17314==    definitely lost: 32 bytes in 2 blocks
+                ==17314==    indirectly lost: 64 bytes in 4 blocks
+                ==17314==      possibly lost: 0 bytes in 0 blocks
+                ==17314==    still reachable: 0 bytes in 0 blocks
+                ==17314==         suppressed: 0 bytes in 0 blocks
+                ==17314== 
+                ==17314== For lists of detected and suppressed errors, rerun with: -s
+                ==17314== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+        
+        2.15. Ao analisar a função pedida foi visto que a função apenas avançava com o pointer não fazendo o free() do nó da lista em questão, logo, nunca seria possivel um alocamento dinamico correto.
+
+        2.16. Como de esperado o programa crasha com um double free() [tentar 2 vezes dar free do mesmo nó dinamicamente alocado] 
+
+        2.17. O mesmo nãoao pode ser feito visto ao estarmos a aceder a um elemento nulo, nãoao ser possivel aceder a um dado do mesmo, seria quase como tentar aceder a uma posição de um array que não existe.
+
+        2.18. Inspeção do codigo verificou que o caso em que o primeiro elemento era impar haveria tentativa de aceder a algo que ainda era null
+
+        2.19. Verificaçao da cabeça da lista.
+
+        3 Sistema de Submissão
+
+
+
+
+
+
+
+
+
+
+        

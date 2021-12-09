@@ -1,0 +1,76 @@
+z10.txt
+QU: The number of links performed is 8 for 10 input pairs. Counter value 18 Union Value 8 Search value 10
+WQU: The number of links performed is 8 for 10 input pairs. Counter value 76 Union Value 40 Search value 36
+CWQU: The number of links performed is 8 for 10 input pairs. Counter value 135 Union Value 101 Search value 34
+QF: The number of links performed is 8 for 10 input pairs. Counter value 130 Union Value 114 Search value 16
+z20.txt
+QU: The number of links performed is 16 for 20 input pairs. Counter value 74 Union Value 16 Search value 58
+WQU: The number of links performed is 16 for 20 input pairs. Counter value 158 Union Value 80 Search value 78
+CWQU: The number of links performed is 16 for 20 input pairs. Counter value 271 Union Value 193 Search value 78
+QF: The number of links performed is 16 for 20 input pairs. Counter value 476 Union Value 444 Search value 32
+z50.txt
+QU: The number of links performed is 41 for 50 input pairs. Counter value 291 Union Value 41 Search value 250
+WQU: The number of links performed is 41 for 50 input pairs. Counter value 437 Union Value 205 Search value 232
+CWQU: The number of links performed is 41 for 50 input pairs. Counter value 733 Union Value 515 Search value 218
+QF: The number of links performed is 41 for 50 input pairs. Counter value 2639 Union Value 2557 Search value 82
+z100.txt
+QU: The number of links performed is 86 for 100 input pairs. Counter value 718 Union Value 86 Search value 632
+WQU: The number of links performed is 86 for 100 input pairs. Counter value 880 Union Value 430 Search value 450
+CWQU: The number of links performed is 86 for 100 input pairs. Counter value 1496 Union Value 1076 Search value 420
+QF: The number of links performed is 86 for 100 input pairs. Counter value 10184 Union Value 10012 Search value 172
+z200.txt
+QU: The number of links performed is 170 for 200 input pairs. Counter value 2816 Union Value 170 Search value 2646
+WQU: The number of links performed is 170 for 200 input pairs. Counter value 1774 Union Value 850 Search value 924
+CWQU: The number of links performed is 170 for 200 input pairs. Counter value 2984 Union Value 2132 Search value 852
+QF: The number of links performed is 170 for 200 input pairs. Counter value 39522 Union Value 39182 Search value 340
+z500.txt
+QU: The number of links performed is 417 for 500 input pairs. Counter value 12109 Union Value 417 Search value 11692
+WQU: The number of links performed is 417 for 500 input pairs. Counter value 4735 Union Value 2085 Search value 2650
+CWQU: The number of links performed is 417 for 500 input pairs. Counter value 7600 Union Value 5292 Search value 2308
+QF: The number of links performed is 417 for 500 input pairs. Counter value 235017 Union Value 234183 Search value 834
+z1000.txt
+QU: The number of links performed is 835 for 1000 input pairs. Counter value 54695 Union Value 835 Search value 53860
+WQU: The number of links performed is 835 for 1000 input pairs. Counter value 9407 Union Value 4175 Search value 5232
+CWQU: The number of links performed is 835 for 1000 input pairs. Counter value 15391 Union Value 10747 Search value 4644
+QF: The number of links performed is 835 for 1000 input pairs. Counter value 957787 Union Value 956117 Search value 1670
+z2000.txt
+QU: The number of links performed is 1684 for 2000 input pairs. Counter value 214082 Union Value 1684 Search value 212398
+WQU: The number of links performed is 1684 for 2000 input pairs. Counter value 19348 Union Value 8420 Search value 10928
+CWQU: The number of links performed is 1684 for 2000 input pairs. Counter value 31210 Union Value 21838 Search value 9372
+QF: The number of links performed is 1684 for 2000 input pairs. Counter value 3880032 Union Value 3876664 Search value 3368
+z5000.txt
+QU: The number of links performed is 4203 for 5000 input pairs. Counter value 1083881 Union Value 4203 Search value 1079678
+WQU: The number of links performed is 4203 for 5000 input pairs. Counter value 47985 Union Value 21015 Search value 26970
+CWQU: The number of links performed is 4203 for 5000 input pairs. Counter value 77311 Union Value 54069 Search value 23242
+QF: The number of links performed is 4203 for 5000 input pairs. Counter value 23640501 Union Value 23632095 Search value 8406
+z10000.txt
+QU: The number of links performed is 8361 for 10000 input pairs. Counter value 4682635 Union Value 8361 Search value 4674274
+WQU: The number of links performed is 8361 for 10000 input pairs. Counter value 96723 Union Value 41805 Search value 54918
+CWQU: The number of links performed is 8361 for 10000 input pairs. Counter value 154364 Union Value 107736 Search value 46628
+QF: The number of links performed is 8361 for 10000 input pairs. Counter value 95051501 Union Value 95034779 Search value 16722
+z20000.txt
+QU: The number of links performed is 16794 for 20000 input pairs. Counter value 17921782 Union Value 16794 Search value 17904988
+WQU: The number of links performed is 16794 for 20000 input pairs. Counter value 193512 Union Value 83970 Search value 109542
+CWQU: The number of links performed is 16794 for 20000 input pairs. Counter value 310781 Union Value 217215 Search value 93566
+QF: The number of links performed is 16794 for 20000 input pairs. Counter value 379387710 Union Value 379354122 Search value 33588
+z50000.txt
+QU: The number of links performed is 41812 for 50000 input pairs. Counter value 107047636 Union Value 41812 Search value 107005824
+WQU: The number of links performed is 41812 for 50000 input pairs. Counter value 488804 Union Value 209060 Search value 279744
+CWQU: The number of links performed is 41812 for 50000 input pairs. Counter value 778534 Union Value 541756 Search value 236778
+QF: The number of links performed is 41812 for 50000 input pairs. Counter value 2360650278 Union Value 2360566654 Search value 83624
+z100000.txt
+QU: The number of links performed is 83744 for 100000 input pairs. Counter value 455198546 Union Value 83744 Search value 455114802
+WQU: The number of links performed is 83744 for 100000 input pairs. Counter value 979822 Union Value 418720 Search value 561102
+CWQU: The number of links performed is 83744 for 100000 input pairs. Counter value 1556214 Union Value 1085108 Search value 471106
+QF: The number of links performed is 83744 for 100000 input pairs. Counter value 9506777052 Union Value 9506609564 Search value 167488
+z200000.txt
+QU: The number of links performed is 167760 for 200000 input pairs. Counter value 1769185226 Union Value 167760 Search value 1769017466
+WQU: The number of links performed is 167760 for 200000 input pairs. Counter value 1963934 Union Value 838800 Search value 1125134
+CWQU: The number of links performed is 167760 for 200000 input pairs. Counter value 3113772 Union Value 2172264 Search value 941508
+QF: The number of links performed is 167760 for 200000 input pairs. Counter value 37982377968 Union Value 37982042448 Search value 335520
+z500000.txt
+QU: The number of links performed is 419003 for 500000 input pairs. Counter value 11001310151 Union Value 419003 Search value 11000891148
+WQU: The number of links performed is 419003 for 500000 input pairs. Counter value 4899561 Union Value 2095015 Search value 2804546
+CWQU: The number of links performed is 419003 for 500000 input pairs. Counter value 7780709 Union Value 5425211 Search value 2355498
+z500000.txt
+z10.txt
